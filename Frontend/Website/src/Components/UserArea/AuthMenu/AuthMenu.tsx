@@ -1,16 +1,23 @@
-import { userService } from "../../../Services/UserService"
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../Redux/Store";
+
+
 
 
 
 export function AuthMenu() {
 
-    const fullName = userService.getFullName()
+   const user = useSelector((state: RootState) => state.user)
+
 
 
     return (
         <div className="AuthMenu">
+            {user && (
+                <span>Welcome {user.firstName} {user.lastName}</span>
+            )}
            
-            { fullName && (<span>Welcome {fullName}</span>)}
 
         </div>
     )

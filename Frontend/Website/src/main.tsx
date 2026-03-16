@@ -9,12 +9,13 @@ import { Layout } from './Components/LayoutArea/Layout/Layout.js'
 import { interceptor } from './Utils/Interceptor'
 import { Provider } from 'react-redux';
 import { store } from './Redux/Store.js';
+import { userService } from './Services/UserService.js';
 
 
 // axios.defaults.baseURL = "http://35.178.212.214:4003";
 axios.defaults.baseURL = "/api";
 interceptor.create();
-
+userService.loadUserFromToken();
 createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
         <BrowserRouter>

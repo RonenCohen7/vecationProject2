@@ -5,6 +5,8 @@ import { appConfig } from "../Utils/AppConfig";
 import { RegisterModel } from "../../Models/RegisterModel";
 import { jwtDecode } from "jwt-decode";
 import { notify } from "../Utils/Notify";
+import { store } from "../Redux/Store";
+import { userSlice } from "../Redux/UserSlice";
 
 
 
@@ -15,9 +17,19 @@ class UserService {
     public async login(credential: CredentialsModel): Promise<void> {
         try {
             const response = await axios.post<string>(appConfig.loginUrl, credential)
-            console.log("LOGIN URL FROM SERVICE", appConfig.loginUrl);
+
             const token = response.data
             localStorage.setItem("token", token)
+
+            const payload: any = jwtDecode(token)
+            console.log("JWT payload:", payload);
+            store.dispatch(userSlice.actions.login({
+                userId: payload.userId,
+                firstName:payload.firstName,
+                lastName:payload.lastName,
+                role: payload.role
+            }))
+            
         } catch (err: any) {
 
             let message = err.response?.data || "Login failed";
@@ -43,6 +55,9 @@ class UserService {
     //Logout
     public logout() {
         localStorage.removeItem("token");
+        localStorage.removeItem("user")
+        store.dispatch(userSlice.actions.logout())
+       
     }
 
     //Check if user login
@@ -79,6 +94,21 @@ class UserService {
         const token = localStorage.getItem("token")
         if(!token) return null;
         return jwtDecode(token) as any;
+    }
+
+
+    //load user from token
+    public loadUserFromToken():void {
+        const token = localStorage.getItem("token");
+        if(!token) return;
+
+        const payload: any = jwtDecode(token)
+        store.dispatch(userSlice.actions.login({
+            userId: payload.userId,
+            firstName: payload.firstName,
+            lastName: payload.lastName,
+            role: payload.role
+        }))
     }
 
 

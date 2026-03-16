@@ -3,14 +3,16 @@ import "./Menu.css";
 
 import { notify } from "../../../Utils/Notify";
 import { userService } from "../../../Services/UserService";
+import { useState } from "react";
 
 export function Menu() {
 
-    const isLoggedIn = userService.isLogin();
+    const [isLoggedIn, setIsLoggedIn] = useState(userService.isLogin())
     const navigate = useNavigate();
 
     function handleLogout() {
         userService.logout();
+        setIsLoggedIn(false);
         notify.success("By By")
         navigate("/home");
     }
