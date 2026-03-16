@@ -13,3 +13,6 @@ logs
 
 mysql-data
 docker-data
+
+Libraries/**/build
+Libraries/**/dist
