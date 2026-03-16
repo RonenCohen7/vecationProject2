@@ -1,0 +1,17 @@
+{
+  "name": "@vacation/monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo Project",
+  "scripts": {
+    "build": "pnpm recursive run build",
+    "start": "pnpm --parallel start"
+  },
+  "keywords": [],
+  "author": "Ronen Cohen",
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

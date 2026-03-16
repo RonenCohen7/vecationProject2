@@ -1,0 +1,86 @@
+.Layout {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  background-color: var(--bg-main);
+}
+
+/* Header */
+.Layout > header {
+  grid-area: header;
+  background-color: #020617;
+  color: white;
+  text-align: center;
+  font-size: 1.6em;
+  /* padding: 1rem 1.5rem; */
+  border-bottom: 1px solid #1f2933;
+}
+
+/* Navigation */
+.Layout > nav {
+  grid-area: nav;
+  background-color: #020617;
+  border-right: 1px solid #1f2933;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* Main content */
+.Layout > main {
+  grid-area: main;
+  overflow-y:hidden;
+}
+
+/* =========================
+   Responsive Layout
+   ========================= */
+
+@media (max-width: 900px) {
+  .Layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main";
+  }
+
+  .Layout > nav {
+    border-right: none;
+    border-bottom: 1px solid #1f2933;
+  }
+
+
+  /* ===== Auth Menu Area ===== */
+
+.AuthMenu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+}
+
+/* Welcome Text */
+
+.AuthMenu span {
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Links */
+
+.AuthMenu a {
+    text-decoration: none;
+    color: #ff4b6e;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.AuthMenu a:hover {
+    opacity: 0.8;
+}
+}

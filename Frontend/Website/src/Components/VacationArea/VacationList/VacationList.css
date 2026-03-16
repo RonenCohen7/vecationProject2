@@ -1,0 +1,252 @@
+.vacation-page {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Toolbar */
+
+.vacation-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    background: darkslategrey;
+    color: wheat;
+}
+
+.filter-btn.active {
+    color: white;
+}
+
+/* Grid */
+
+.vacation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Card */
+
+.vacation-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0477f308;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.vacation-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.vacation-card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 6;
+}
+
+
+.vacation-card:hover h3 {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    color: darkslategray;
+    background-color: #fffffffa;
+}
+
+.vacation-card p {
+    color: darkslategrey;
+}
+
+/* Image */
+
+.vacation-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    transition: transform 0.8s ease, filter 0.6s ease;
+}
+
+.vacation-card:hover img {
+    transform: scale(1.15) translateY(-5px);
+    filter: brightness(1.1) contrast(1.2) saturate(1.2);
+}
+
+/* Gradient cinematic overlay */
+
+.vacation-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+    opacity: 0;
+    transition: 0.4s;
+    pointer-events: none;
+}
+
+.vacation-card:hover::after {
+    opacity: 1;
+}
+
+/* Like button */
+
+.btn-like {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.btn-like.likes {
+    color: red;
+}
+
+/* Edit & Delete */
+
+.edit-btn,
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #0c9fe82f;
+}
+
+.edit-btn {
+    right: 52px;
+}
+
+.delete-btn {
+    right: 12px;
+}
+
+/* Date */
+
+.date {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    color: darkslategrey;
+}
+
+/* Price */
+
+.price {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.pagination button {
+    background: none;
+    border: none;
+    color: darkslategrey;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    color: black;
+}
+
+/* Card buttons */
+
+.card-buttons {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.cardDetails,
+.cardAI {
+    color: white;
+    font-style: italic;
+    background: #d4af3729;
+    border: none;
+    padding: 9px 17px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4facfe3a, #00f1fe4b);
+    color: darkcyan;
+}
+
+.cardDetails:hover,
+.cardAI:hover {
+    color: black;
+}
+
+.edit-btn,
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #0c9fe82f;
+    z-index: 5;
+}
+
+.btn-like {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    padding: 5px 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 5;
+}
+
+.cardBook {
+    background: linear-gradient(135deg, #4facfe3a, #00f1fe4b);
+    color: darkcyan;
+}
+.cardBook:hover {
+background: linear-gradient(153deg, rgba(255, 0, 0, 0.484), rgba(0, 0, 255, 0.31));
+}

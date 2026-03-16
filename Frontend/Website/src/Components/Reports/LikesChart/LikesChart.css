@@ -1,0 +1,9 @@
+.LikesChart {
+    width: 70%;
+    max-width: 600px;
+    margin: auto;
+    padding:10px;
+
+    background: #fafafa;
+    border-radius: 10px;
+}

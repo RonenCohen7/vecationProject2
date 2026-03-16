@@ -1,0 +1,24 @@
+{
+    "name": "@vacation/jwt",
+    "version": "1.0.0",
+    "description": "JWT logic.",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Ronen Cohen",
+    "packageManager": "pnpm@10.12.3",
+    "devDependencies": {
+        "@types/express": "catalog:backend",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/node": "catalog:backend"
+    },
+    "dependencies": {
+        "@vacation/restify": "workspace:*",
+        "jsonwebtoken": "^9.0.3"
+    },
+    "peerDependencies": {
+        "express": "catalog:backend"
+    },
+    "types": "build/index.d.ts",
+    "main": "build/index.js"
+}

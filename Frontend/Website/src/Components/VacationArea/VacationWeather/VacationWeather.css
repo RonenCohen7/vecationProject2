@@ -1,0 +1,68 @@
+.VacationWeather {
+    width: 100%;
+}
+
+.weather-title {
+    font-size: 1.67rem;
+    font-weight: 600;
+    color: darkcyan;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 8px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 6px;
+    border-radius: 12px;
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    text-align: center;
+}
+
+.weather-date {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: darkslategray;
+}
+
+.weather-card img {
+    width: 64px;
+    height: 64px;
+}
+
+.weather-condition {
+    font-size: 1.65rem;
+    color: darkslategray;
+    line-height: 1.3;
+}
+
+.weather-temp {
+    display: flex;
+    gap: 6px;
+    font-size: 1.85rem;
+    font-weight: 600;
+}
+
+.temp-max { color: #e07b39; }
+.temp-min { color: #5b8dd9; }
+
+.weather-loading {
+    font-size: 1.9rem;
+    color: darkslategray;
+}
+
+@media (max-width: 600px) {
+    .weather-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

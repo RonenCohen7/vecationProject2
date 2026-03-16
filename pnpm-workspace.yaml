@@ -1,0 +1,18 @@
+packages:
+  - "Backend/*"
+  - "Frontend/*"
+  - "Libraries/*"
+
+
+
+
+catalogs:
+  backend:
+    '@types/node': ^25.0.9
+    express: ^5.2.1
+    '@types/express': ^5.0.6
+    mongoose: ^9.1.5
+
+
+
+   

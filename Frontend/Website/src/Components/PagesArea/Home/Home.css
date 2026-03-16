@@ -1,0 +1,81 @@
+.home {
+
+    background-image:
+        /* linear-gradient(hsla(193, 90%, 8%, 0.592), hsla(205, 96%, 41%, 0.167)), */
+
+        url("../../../Assets/Images/homeLogo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark overlay */
+.overlay {
+    /* background: rgba(0, 0, 0, 0.65); */
+    padding: 10px;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 30px;
+}
+
+.home {
+    min-height: 100%;
+    height: 100%;
+    background: #0f1c2d;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.home-content {
+    text-align: center;
+    max-width: 850px;
+    overflow: hidden;  
+}
+
+.home-logo{
+    max-width: 740px;
+    width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    animation: spinLogo 8s liner initial;
+}
+.home-logo {
+    transform-origin: center;
+}
+
+@keyframes spinLogo {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.home-content>h1 {
+    color: white;
+}
+
+.home-content>p {
+    color: gold;
+}
+.btn-login {
+    color: white;
+    background: rgba(115, 3, 53, 0.156);
+
+    
+}

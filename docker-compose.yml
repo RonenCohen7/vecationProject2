@@ -1,0 +1,273 @@
+#------------------------------------------------------------------
+# start level 1 - create mongo service
+#------------------------------------------------------------------
+
+services:
+
+  mongo-service:
+    #Download the image from Docker Hub
+    image: mongo:8
+
+    #Container name:
+    container_name: vacation-mongo-container
+
+    restart: unless-stopped
+
+    ports:
+      - 27018:27017
+    #Volume
+    volumes:
+      - vacation-mongo-volume:/data/db
+          
+
+    #Health Check
+    healthcheck:
+      test: ["CMD","mongosh","--eval","db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+#-------------#------------------------------------------------------------------
+# start level 2 - create auto service
+#-----------------------------------------------------------------------------------------------------------------------
+
+  auth-service:
+    platform: linux/amd64
+
+    depends_on:
+      mongo-service:
+        condition: service_healthy
+    
+    build:
+      context: . 
+      dockerfile: ./Backend/Auth/Dockerfile
+
+    image: ronen100/vacation-auth-image:1.0
+    container_name: auth-container
+
+    # ports:
+    #  - 4000:4000
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      AUTH_DB_CONNECTION_STRING: "mongodb://mongo-service:27017/users-db"
+
+    healthcheck:
+      test: ["CMD","node","--eval","require('http').get('http://localhost:4000/ping', (response) => process.exit(response.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+
+#-------------#------------------------------------------------------------------
+# start level 3 - create vacation service
+#------------------------------------------------------------------
+  vacation-service:
+    platform: linux/amd64
+
+    depends_on:
+      mongo-service:
+        condition: service_healthy
+
+    build:
+      context: .
+      dockerfile: ./Backend/Vacation/Dockerfile
+    
+    image: ronen100/vacation-vacation-image:1.0
+    container_name: vacation-container
+
+    ports:
+      - 4001:4001
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      VACATION_DB_CONNECTION_STRING: "mongodb://mongo-service:27017/vacations-db"
+      NODE_ENV: "production"
+
+    volumes:
+        - ./Backend/Vacation/uploads:/app/Backend/Vacation/uploads
+
+    healthcheck:
+      test: ["CMD","node","--eval","require('http').get('http://localhost:4001/ping', (response) => process.exit(response.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+
+
+#-------------#------------------------------------------------------------------
+# start level 4 - create likes service
+#------------------------------------------------------------------
+  likes-service:
+    platform: linux/amd64
+
+    depends_on:
+      mongo-service:
+        condition: service_healthy
+
+    build:
+      context: .
+      dockerfile: ./Backend/LikesVacation/Dockerfile
+    
+    image: ronen100/vacation-likes-image:1.0
+    container_name: likes-container
+
+    # ports:
+    #   - 4002:4002
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      LIKE_VACATION_DB_CONNECTION_STRING: "mongodb://mongo-service:27017/likes-vacation-db"
+
+    healthcheck:
+      test: ["CMD","node","--eval","require('http').get('http://localhost:4002/ping', (response) => process.exit(response.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+
+#-------------#------------------------------------------------------------------
+# start level 5 - create Gateway service
+#------------------------------------------------------------------
+  gateway-service:
+    platform: linux/amd64
+
+    depends_on:
+      auth-service:
+        condition: service_healthy
+
+      vacation-service:
+        condition: service_healthy
+
+      likes-service:
+        condition: service_healthy
+
+      booking-service:
+        condition: service_healthy
+
+    build:
+      context: .
+      dockerfile: ./Backend/Gateway/Dockerfile
+    
+    image: ronen100/vacation-gateway-image:1.0
+    container_name: gateway-container
+
+    ports:
+      - 4003:4003
+
+    restart: unless-stopped
+
+
+    env_file:
+      - .env
+
+    environment:
+      AUTH_URL: "http://auth-service:4000"
+      VACATION_URL: "http://vacation-service:4001"
+      LIKE_VACATION_URL: "http://likes-service:4002"
+      BOOKING_URL: "http://booking-service:4004"
+
+
+
+
+    healthcheck:
+      test: ["CMD","node","--eval","require('http').get('http://localhost:4003/ping', (response) => process.exit(response.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+
+
+#-------------#------------------------------------------------------------------
+# start level 6 - create Booking service
+#------------------------------------------------------------------
+  booking-service:
+    platform: linux/amd64
+
+    depends_on:
+      mongo-service:
+        condition: service_healthy
+    
+    build:
+      context: .
+      dockerfile: ./Backend/Booking/Dockerfile
+    
+    image: ronen100/vacation-booking-image:1.0
+    container_name: booking-container
+
+    #ports:
+    # - 4004:4004
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+    
+    environment:
+      BOOKING_DB_CONNECTION: "mongodb://mongo-service:27017/booking-db"
+
+    healthcheck:
+      test: ["CMD","node","--eval","require('http').get('http://localhost:4004/ping',(r)=>process.exit(r.statusCode===200?0:1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+
+
+
+#-------------------------------------------------------------------#-------------------------------------------------------------------
+  frontend-service:
+    platform: linux/amd64
+    
+    depends_on:
+      gateway-service:
+        condition: service_healthy
+
+    build:
+      context: .
+      dockerfile: ./Frontend/Website/Dockerfile
+
+    image: ronen100/vacation-website-image:1.0
+    container_name: vacation-website-container
+
+    ports:
+      - 80:5173
+   
+      
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "node", "-e",
+        "require('http').get('http://localhost:5173',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
+      ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+#Named-Volume list:
+volumes:
+  vacation-mongo-volume:
+    name: vacation-mongo-volume
+
+#-------------------------------------------------------------------
+
+
+# Run: docker compose up  -d --build
+#Stop: docker compose down

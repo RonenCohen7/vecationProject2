@@ -1,0 +1,96 @@
+/* ===== Page Wrapper ===== */
+
+.AddVacation {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ===== Form Card ===== */
+
+.AddVacation form {
+    width: 100%;
+    max-width: 520px;
+    background: hsla(198, 83%, 55%, 0.171);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: darkslategray;
+}
+
+/* ===== Labels ===== */
+
+.AddVacation label {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ===== Inputs ===== */
+
+.AddVacation input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.08);
+    color: black;
+    transition: 0.2s ease;
+    background: #ffa60065
+}
+
+/* Focus Effect */
+.AddVacation input:focus {
+    background: hsla(0, 95%, 48%, 0.459);
+    box-shadow: 0 0 0 2px rgba(255,75,110,0.5);
+}
+
+/* File input קצת שונה */
+.AddVacation input[type="file"]::-webkit-file-upload-button {
+    background: var(--deep);
+    color: var(--sand);
+    border: none;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    margin-right: 0.8rem;
+    transition: background 0.2s ease;
+}
+
+/* ===== Button ===== */
+
+.AddVacation button {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    background: #ff4b6e;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.AddVacation button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,75,110,0.4);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+    .AddVacation form {
+        padding: 25px;
+    }
+}

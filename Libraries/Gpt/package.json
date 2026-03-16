@@ -1,0 +1,23 @@
+{
+    "name": "@vacation/gpt",
+    "version": "1.0.0",
+    "description": "Gpt tools vacation.",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Ronen Cohen",
+    "packageManager": "pnpm@10.12.3",
+    "devDependencies": {
+        "@types/express": "catalog:backend",
+        "@types/node": "catalog:backend"
+    },
+    "dependencies": {
+        "@vacation/restify": "workspace:*",
+        "openai": "^6.27.0"
+    },
+    "peerDependencies": {
+        "express": "catalog:backend"
+    },
+    "types": "build/index.d.ts",
+    "main": "build/index.js"
+}

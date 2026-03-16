@@ -1,0 +1,31 @@
+{
+    "name": "@vacation/weather",
+    "version": "1.0.0",
+    "description": "Weather tools for vacation.",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Ronen Cohen",
+    "packageManager": "pnpm@10.12.3",
+    "devDependencies": {
+        "@types/express": "catalog:backend",
+        "@types/node": "catalog:backend"
+    },
+    "dependencies": {
+        "@vacation/restify": "workspace:*",
+        "axios": "^1.13.5",
+        "openai": "^6.27.0"
+    },
+    "peerDependencies": {
+        "express": "catalog:backend"
+    },
+    "types": "build/index.d.ts",
+    "main": "build/index.js",
+        "exports": {
+        ".": {
+            "import": "./build/index.js",
+            "require": "./build/index.js",
+            "types": "./build/index.d.ts"
+        }
+    }
+}

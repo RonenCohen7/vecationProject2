@@ -1,0 +1,24 @@
+{
+  "name": "@vacation/auth",
+  "version": "1.0.0",
+  "description": "Auth project & Authorization Microservice",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon --exec ts-node src/app.ts --quiet"
+  },
+  "author": "Ronen Cohen",
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.2"
+  },
+  "dependencies": {
+    "@vacation/jwt": "workspace:*",
+    "@vacation/restify": "workspace:*",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.0",
+    "striptags": "^3.2.0"
+  }
+}

@@ -1,0 +1,28 @@
+services:
+
+  vacation-service:
+    environment:
+      NODE_ENV: production
+      PUBLIC_HOST: 18.175.121.197
+    expose:
+      - 4001
+    volumes:
+      - ./uploads:/app/Backend/Vacation/uploads
+
+  gateway-service:
+    environment:
+      AUTH_URL: "http://auth-service:4000"
+      VACATION_URL: "http://vacation-service:4001"
+      LIKE_VACATION_URL: "http://likes-service:4002"
+      BOOKING_URL: "http://booking-service:4004"
+
+
+    booking-service:                                
+      environment:
+        BOOKING_DB_CONNECTION: "mongodb://mongo-service:27017/booking-db"
+    expose:
+      - 4004
+
+  frontend-service:
+    ports:
+      - 80:5173
