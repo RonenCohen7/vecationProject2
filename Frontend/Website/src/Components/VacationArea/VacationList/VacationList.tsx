@@ -225,8 +225,8 @@ export function ListVacation() {
                         <p>{vacation.description}</p>
 
                         <div className="date">
-                            <span>{new Date(vacation.startDate).toLocaleDateString()}</span>
-                            <span>{new Date(vacation.endDate).toLocaleDateString()}</span>
+                            <span>{new Date(vacation.startDate).toLocaleDateString("en-GB")}</span>
+                            <span>{new Date(vacation.endDate).toLocaleDateString("en-GB")}</span>
                         </div>
 
                         <div className="price">

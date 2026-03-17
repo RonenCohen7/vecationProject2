@@ -24,6 +24,10 @@ export function VacationDetails() {
     const _id = params._id
 
 
+
+    const days = vacation? Math.ceil(new Date(vacation.endDate).getTime() - new Date(vacation.startDate).getTime()) / (1000 * 60 * 60 * 24) + 1 : 0;
+
+
     function returnBack() {
         navigate("/vacations")
     }
@@ -48,21 +52,24 @@ export function VacationDetails() {
                 <h2 className="Destination">{vacation?.destination}</h2>
 
                 <p className="description"> {vacation?.description}</p>
+                <h3 className="price"> Price: ${vacation?.price}</h3>
+
 
                 <div className="dates">
 
-                    Start Date: {vacation && new Date(vacation.startDate).toLocaleDateString()}
+                    Start Date: {vacation && new Date(vacation.startDate).toLocaleDateString("en-GB")}
                     <br></br>
-                    End Date: {vacation && new Date(vacation.endDate).toLocaleDateString()}
+                    End Date: {vacation && new Date(vacation.endDate).toLocaleDateString("en-GB")}
 
                     <br></br><br></br>
 
 
-                    {vacation && <VacationWeather destination={vacation.destination} />}
+                    {vacation && <VacationWeather destination={vacation.destination} days={days}
+                    startDate={vacation.startDate} endDate={vacation.endDate}/>}
 
                 </div>
 
-                <h3 className="price"> Price: ${vacation?.price}</h3>
+
 
                 <div className="details-buttons">
 

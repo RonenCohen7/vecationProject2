@@ -30,9 +30,10 @@
 }
 
 .weather-date {
-    font-size: 1.7rem;
+    font-size: 0.85 rem;
     font-weight: 600;
     color: darkslategray;
+    white-space: nowrap;
 }
 
 .weather-card img {
@@ -41,7 +42,7 @@
 }
 
 .weather-condition {
-    font-size: 1.65rem;
+    font-size: 0.85rem;
     color: darkslategray;
     line-height: 1.3;
 }
@@ -49,7 +50,7 @@
 .weather-temp {
     display: flex;
     gap: 6px;
-    font-size: 1.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
@@ -57,7 +58,7 @@
 .temp-min { color: #5b8dd9; }
 
 .weather-loading {
-    font-size: 1.9rem;
+    font-size: 0.9rem;
     color: darkslategray;
 }
 

@@ -5,30 +5,40 @@ import { DayForecast, weather } from "@vacation/weather"
 
 
 type Props = {
-    destination: string
+    destination: string;
+    days: number;
+    startDate: string;
+    endDate: string;
 }
 
 
-export function VacationWeather({ destination }: Props) {
+export function VacationWeather({ destination, days, startDate, endDate }: Props) {
 
-    const [forcast, setForecast] = useState<DayForecast[]>([]);
+    const [forecast, setForecast] = useState<DayForecast[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+   
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-         console.log("API KEY:", apiKey);
-        weather.getForecast(destination, apiKey)
-            .then(setForecast)
+        console.log("API KEY:", apiKey);
+        weather.getForecast(destination, apiKey, days + 2)
+            .then(data => {
+                
+                const filtered = data.filter(day => {
+                    return day.date >= startDate && day.date <= endDate
+                });
+                setForecast(filtered)
+            })
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
-    }, [destination]);
+    }, [destination , days, startDate, endDate]);
 
     if (loading) return <p className="weather-loading">Loading weather...</p>
     return (
         <div className="VacationWeather">
-            <h4 className="weather-title">5-Day Forecast</h4>
+            <h4 className="weather-title">Weather Forecast...</h4>
             <div className="weather-grid">
-                {forcast.map(day => (
+                {forecast.map(day => (
                     <div key={day.date} className="weather-card">
                         <p className="weather-date">
                             {new Date(day.date).toLocaleString("en", { weekday: "short", month: "short", day: "numeric" })}

@@ -4,9 +4,11 @@ import { DayForecast } from "./weather-model";
 const BASE_URL = "https://api.weatherapi.com/v1";
 
 export const weather = {
-    async getForecast(destination: string, apiKey: string, days:number = 5):Promise<DayForecast[]>{
+    
+    async getForecast(destination: string, apiKey: string, days:number):Promise<DayForecast[]>{
+        const safeDays = Math.min(days, 10);
         const result = await axios.get(`${BASE_URL}/forecast.json`, {
-            params: {key: apiKey, q: destination, days}
+            params: {key: apiKey, q: destination, days: safeDays}
         });
         return result.data.forecast.forecastday.map((d:any) => ({
             date: d.date,
