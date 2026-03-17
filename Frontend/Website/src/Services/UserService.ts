@@ -49,6 +49,13 @@ class UserService {
         const response = await axios.post<string>(appConfig.registerUrl, user)
         const token = response.data;
         localStorage.setItem("token", token)
+        const payload: any = jwtDecode(token)
+        store.dispatch(userSlice.actions.login({
+            userId: payload.userId,
+            firstName: payload.firstName,
+            lastName:payload.lastName,
+            role: payload.role
+        }))
 
     }
 
