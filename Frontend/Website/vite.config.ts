@@ -1,8 +1,20 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
+import obfuscator from "vite-plugin-javascript-obfuscator";
 
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+
+    mode === "production" &&
+      obfuscator({
+        options: {
+          compact: true,
+          controlFlowFlattening: false,
+        },
+      }),
+  ].filter(Boolean),
+
   server: {
     host: true,
     proxy: {
@@ -10,4 +22,4 @@ export default defineConfig({
       "/images": "http://localhost:4003"
     }
   }
-})
+}))
