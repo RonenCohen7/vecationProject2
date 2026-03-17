@@ -98,3 +98,28 @@
 .btn-cancel:hover {
     background: #cccccc;
 }
+@media (max-width: 768px) {
+    .booking-page {
+        margin: 20px 16px;
+        padding: 20px;
+    }
+
+    .booking-page h2 {
+        font-size: 22px;
+    }
+
+    .booking-page h3 {
+        font-size: 18px;
+    }
+
+    .booking-form input {
+        width: 80px;
+        font-size: 14px;
+    }
+
+    .btn-confirm,
+    .btn-cancel {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

@@ -79,3 +79,22 @@
 
     
 }
+
+@media (max-width: 768px) {
+    .home {
+        padding: 0 12px;
+    }
+
+    .home-logo {
+        max-width: 100%;
+        max-height: 40vh;
+    }
+
+    .home-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .home-content p {
+        font-size: 0.9rem;
+    }
+}

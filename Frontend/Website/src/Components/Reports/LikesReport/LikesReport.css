@@ -77,3 +77,24 @@
 .exportBtn:hover {
     background: #1e8449;
 }
+@media (max-width: 768px) {
+    .LikesReport {
+        padding: 16px;
+        margin: 20px 10px;
+    }
+
+    .LikesReport th,
+    .LikesReport td {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .LikesReport h2 {
+        font-size: 1.2rem;
+    }
+
+    .exportBtn {
+        width: 100%;
+        text-align: center;
+    }
+}

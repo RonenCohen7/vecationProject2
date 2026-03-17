@@ -236,3 +236,42 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+@media (max-width: 768px) {
+    .VacationDetails {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .Destination {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .dates {
+        font-size: 1rem;
+        padding: 10px 14px;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+
+    .imgLeftAllSide {
+        height: 35vw;
+        min-height: 180px;
+    }
+
+    .details-buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
