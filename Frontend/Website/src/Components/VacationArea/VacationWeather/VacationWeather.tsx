@@ -16,24 +16,32 @@ export function VacationWeather({ destination, days, startDate, endDate }: Props
 
     const [forecast, setForecast] = useState<DayForecast[]>([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-   
+
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
         console.log("API KEY:", apiKey);
         weather.getForecast(destination, apiKey, days + 2)
             .then(data => {
-                
+
                 const filtered = data.filter(day => {
                     return day.date >= startDate && day.date <= endDate
                 });
-                setForecast(filtered)
+                if (filtered.length === 0) {
+                    setError("Weather forecast is only available for dates within the next 10 days. ");
+                }
+                else {
+                    setForecast(filtered)
+                }
+
             })
-            .catch(err => console.log(err))
+            .catch(()=> setError("Weather forecast is not available for these dates. "))
             .finally(() => setLoading(false))
-    }, [destination , days, startDate, endDate]);
+    }, [destination, days, startDate, endDate]);
 
     if (loading) return <p className="weather-loading">Loading weather...</p>
+    if(error) return <p className="weather-error">{error}</p>
     return (
         <div className="VacationWeather">
             <h4 className="weather-title">Weather Forecast...</h4>
