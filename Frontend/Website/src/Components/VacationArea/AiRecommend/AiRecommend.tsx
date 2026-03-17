@@ -78,7 +78,10 @@ export function AIRecommend() {
                     ))}
 
                     <p>{recommend.summary}</p>
-                    <button onClick={goBack} className="btn-returnBack">Return Back</button>
+                    <div className="details-buttons">
+                        <button onClick={goBack} className="btn-returnBack" data-tooltip="Back to Vacations">📃</button>
+                    </div>
+
                 </div>
             )}
 

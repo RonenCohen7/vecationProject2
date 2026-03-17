@@ -63,9 +63,16 @@ export function VacationDetails() {
                 </div>
 
                 <h3 className="price"> Price: ${vacation?.price}</h3>
-                <button onClick={recommendAi} className="btn-ai-recommend">Recommend By AI</button>
-                <button onClick={() => navigate(`/booking/${_id}`)} className="cardBook">Book Now ✈️</button>
-                <button onClick={returnBack} className="btn-back">Back to Vacations</button>
+
+                <div className="details-buttons">
+
+                    <button onClick={recommendAi} className="cardAI" data-tooltip="AI Recommendation">🤖</button>
+
+                    <button onClick={() => navigate(`/booking/${_id}`)} className="cardBook" data-tooltip="Book Now">🛫</button>
+
+                    <button onClick={returnBack} className="cardDetails" data-tooltip="Back to Vacations">📃</button>
+
+                </div>
 
 
             </div>

@@ -198,18 +198,18 @@ export function ListVacation() {
                                 </button>
                                 <div className="card-buttons">
 
-                                    <button className="cardAI"
+                                    <button className="cardAI" data-tooltip="AI Recommendation"
                                         onClick={() => navigate(`/AIRecommend/${vacation._id}`)}>
-                                        AI
+                                        🤖
                                     </button>
 
-                                    <button className="cardDetails"
+                                    <button className="cardDetails" data-tooltip="View Details"
                                         onClick={() => navigate(`/vacation/${vacation._id}`)}>
-                                        info
+                                       ℹ️
                                     </button>
-                                    <button className="cardBook" onClick={()=> navigate(`/booking/${vacation._id}`)}>
-                                        Booking ✈️ 
-
+                                    <button className="cardBook"  data-tooltip="Book Now"
+                                    onClick={()=> navigate(`/booking/${vacation._id}`)}>
+                                      🛫
                                     </button>
 
                                 </div>
