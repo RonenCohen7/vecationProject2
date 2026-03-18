@@ -6,3 +6,4 @@ build
 .got
 .gitignore
 docker-compose.yml
+postman

@@ -1,0 +1,95 @@
+[{
+  "_id": {
+    "$oid": "69b717caecb4c4bed2e2de7c"
+  },
+  "userId": {
+    "$oid": "69a404ca013695019630df94"
+  },
+  "vacationId": {
+    "$oid": "69a9cb033c8773f668b58361"
+  },
+  "person": 2,
+  "status": "pending",
+  "createdAt": {
+    "$date": "2026-03-15T20:34:18.902Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-15T20:34:18.902Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b72a0a1cd7d5e5262082d7"
+  },
+  "userId": {
+    "$oid": "69a571d5ba21f6e1a1b7fbe9"
+  },
+  "vacationId": {
+    "$oid": "69a9cb033c8773f668b58361"
+  },
+  "person": 2,
+  "status": "pending",
+  "createdAt": {
+    "$date": "2026-03-15T21:52:10.702Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-15T21:52:10.702Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b72a141cd7d5e5262082d9"
+  },
+  "userId": {
+    "$oid": "69a571d5ba21f6e1a1b7fbe9"
+  },
+  "vacationId": {
+    "$oid": "69a9cb033c8773f668b58361"
+  },
+  "person": 2,
+  "status": "pending",
+  "createdAt": {
+    "$date": "2026-03-15T21:52:20.586Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-15T21:52:20.586Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b72cdd1cd7d5e5262082db"
+  },
+  "userId": {
+    "$oid": "69a571d5ba21f6e1a1b7fbe9"
+  },
+  "vacationId": {
+    "$oid": "69a9f4716bec6c653b3d4b82"
+  },
+  "person": 1,
+  "status": "pending",
+  "createdAt": {
+    "$date": "2026-03-15T22:04:13.218Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-15T22:04:13.218Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b72e021cd7d5e5262082dd"
+  },
+  "userId": {
+    "$oid": "69a571d5ba21f6e1a1b7fbe9"
+  },
+  "vacationId": {
+    "$oid": "69a9f4716bec6c653b3d4b82"
+  },
+  "person": 1,
+  "status": "pending",
+  "createdAt": {
+    "$date": "2026-03-15T22:09:06.468Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-15T22:09:06.468Z"
+  }
+}]

@@ -1,0 +1,912 @@
+{
+  "info": {
+    "_postman_id": "a15cb038-bd1c-418b-a618-a84c4cba8a30",
+    "name": "vacation monoripo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43057989"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const token = pm.response.text();",
+                  "pm.collectionVariables.set(\"token\", pm.response.text().replace(/\"/g, \"\"));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \n \"email\":\"bart@gmail.com\",\n \"password\":\"123456\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/auth/login",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const token = pm.response.text();",
+                  "pm.collectionVariables.set(\"token\", pm.response.text().replace(/\"/g, \"\"));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n \"firstName\": \"bart2\",\n \"lastName\": \"simpson\",\n \"email\":\"bart@gmail12.com\",\n \"password\":\"123456\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/auth/register",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "vacation",
+      "item": [
+        {
+          "name": "Get All active vacation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/active",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "active"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Vacation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All active upcoming",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/upcoming",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "upcoming"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add vacation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "destination",
+                  "value": "China",
+                  "type": "text",
+                  "uuid": "6d855195-7eb5-44ed-b819-9d805c84d6a1"
+                },
+                {
+                  "key": "description",
+                  "value": "Experience China’s vast wonders, from the Great Wall and ancient temples to futuristic skylines and breathtaking natural scenery. A journey through history, culture, and innovation.",
+                  "type": "text",
+                  "uuid": "95811652-8937-480d-a103-5e340a6cf393"
+                },
+                {
+                  "key": "startDate",
+                  "value": "2027-01-02",
+                  "type": "text",
+                  "uuid": "24831eed-8640-4dcc-9cc3-ff33b172323f"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2027-07-23",
+                  "type": "text",
+                  "uuid": "72ca2a64-cc9c-423e-9669-4ef12bd09ebb"
+                },
+                {
+                  "key": "price",
+                  "value": "3456",
+                  "type": "text",
+                  "uuid": "b9f1ecdb-5bfc-41dd-afe6-bd91f801a795"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "40ec8bb0-617a-4f30-b69d-670d3258b805",
+                  "src": "/Users/ronencohen/Desktop/china.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update vacation",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "startDate",
+                  "value": "2025-02-01",
+                  "type": "text",
+                  "uuid": "97f00c54-55f7-43b9-8b8a-2e2fb0be9d65"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-10-02",
+                  "type": "text",
+                  "uuid": "563f8151-6a69-41cd-8d6e-eedade4c709b"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "e32b9def-8ccb-4188-9ce9-d70594c839a9",
+                  "src": "/Users/ronencohen/Desktop/italy.jpeg"
+                },
+                {
+                  "key": "destination",
+                  "value": "parice pro",
+                  "type": "text",
+                  "uuid": "54f7a2ae-d62f-450f-9405-8b1f577449b7"
+                },
+                {
+                  "key": "description",
+                  "value": "Explore Italy’s timeless beauty, from Rome’s ancient landmarks and Florence’s art treasures to Venice’s romantic canals and the stunning Amalfi Coast. A perfect blend of culture, cuisine, and charm.",
+                  "type": "text",
+                  "uuid": "e4f5329f-2e10-4c8e-8443-406d7df5371f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/69a9cb033c8773f668b58361",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "69a9cb033c8773f668b58361"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Vacation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/69a446a30a402ec390f096ba",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "69a446a30a402ec390f096ba"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Recommend",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/69a9b9883c8773f668b582eb/recommend",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "69a9b9883c8773f668b582eb",
+                "recommend"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Vacation",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{vacationproject}}/api/vacation/vacation/699ec5cee6d8ff35e856a23e",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "vacation",
+                "vacation",
+                "699ec5cee6d8ff35e856a23e"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "likes",
+      "item": [
+        {
+          "name": "Add like to vacation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/likes/likes/69a4473f0a402ec390f096be",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "likes",
+                "likes",
+                "69a4473f0a402ec390f096be"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove like",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/likes/likes/699ec608e6d8ff35e856a242",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "likes",
+                "likes",
+                "699ec608e6d8ff35e856a242"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All likes",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/likes/likes",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "likes",
+                "likes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Likes-Count",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{vacationproject}}/api/likes/likes/count",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "likes",
+                "likes",
+                "count"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Feed",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{vacationproject}}/api/feed",
+              "host": [
+                "{{vacationproject}}"
+              ],
+              "path": [
+                "api",
+                "feed"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "booking",
+      "item": [
+        {
+          "name": "Add new Booking",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationId\": \"69a9cb033c8773f668b58361\",\n  \"person\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4003/api/booking",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4003",
+              "path": [
+                "api",
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Booking",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationId\": \"69a9cb033c8773f668b58361\",\n  \"person\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4003/api/booking/69b716f6ecb4c4bed2e2de75",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4003",
+              "path": [
+                "api",
+                "booking",
+                "69b716f6ecb4c4bed2e2de75"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Booking",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationId\": \"69a9cb033c8773f668b58361\",\n  \"person\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4003/api/booking",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4003",
+              "path": [
+                "api",
+                "booking"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Booking By User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationId\": \"69a9cb033c8773f668b58361\",\n  \"person\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4003/api/booking/69a5713aba21f6e1a1b7fbe4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4003",
+              "path": [
+                "api",
+                "booking",
+                "69a5713aba21f6e1a1b7fbe4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Booking By Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationId\": \"69a9cb033c8773f668b58361\",\n  \"person\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4003/api/booking/69b716f6ecb4c4bed2e2de75",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4003",
+              "path": [
+                "api",
+                "booking",
+                "69b716f6ecb4c4bed2e2de75"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}

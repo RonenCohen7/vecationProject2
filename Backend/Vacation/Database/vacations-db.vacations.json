@@ -1,0 +1,315 @@
+[{
+  "_id": {
+    "$oid": "69a4052ff11d9a08f8c565d6"
+  },
+  "destination": "Italy",
+  "description": "Explore Italy’s timeless beauty, from Rome’s ancient landmarks and Florence’s art treasures to Venice’s romantic canals and the stunning Amalfi Coast. A perfect blend of culture, cuisine,pro",
+  "startDate": {
+    "$date": "2027-02-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-10-05T00:00:00.000Z"
+  },
+  "price": 2345,
+  "imageName": "a628b89b-a9f4-4e2d-b67d-c60a8cc84cb2.png",
+  "createdAt": {
+    "$date": "2026-03-01T09:21:51.229Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:37:38.702Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a411540a402ec390f0962f"
+  },
+  "destination": "israel",
+  "description": "Beautiful trip",
+  "startDate": {
+    "$date": "2027-01-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-07-23T00:00:00.000Z"
+  },
+  "price": 2345,
+  "imageName": "e5270b70-5625-4540-9a38-1628b949ed00.png",
+  "createdAt": {
+    "$date": "2026-03-01T10:13:40.271Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:25:09.032Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a445d20a402ec390f096b3"
+  },
+  "destination": "Germany",
+  "description": "Explore Germany’s blend of medieval towns, modern cities, and scenic countryside. From Berlin’s vibrant culture to Bavaria’s castles and alpine landscapes, history and beauty meet at every turn",
+  "startDate": {
+    "$date": "2027-01-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-07-23T00:00:00.000Z"
+  },
+  "price": 3456,
+  "imageName": "c995077e-08fa-4db3-a2d1-5aa6f29597c6.jpeg",
+  "createdAt": {
+    "$date": "2026-03-01T13:57:38.246Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T13:57:38.246Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a4465d0a402ec390f096b8"
+  },
+  "destination": "Austria",
+  "description": "Experience Austria’s imperial charm, alpine scenery, and classical elegance. Wander through Vienna’s grand palaces, enjoy Mozart’s legacy, and explore breathtaking mountain landscapes",
+  "startDate": {
+    "$date": "2027-01-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-07-23T00:00:00.000Z"
+  },
+  "price": 3456,
+  "imageName": "cd138e32-49c3-4565-9755-d0d356b872a5.png",
+  "createdAt": {
+    "$date": "2026-03-01T13:59:57.176Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:26:06.546Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a446a30a402ec390f096ba"
+  },
+  "destination": "Marocco",
+  "description": "Explore Morocco’s vibrant souks, desert dunes, and stunning architecture. From Marrakech’s colorful markets to the Sahara’s golden sunsets, adventure and culture await at every step.",
+  "startDate": {
+    "$date": "2027-01-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-07-23T00:00:00.000Z"
+  },
+  "price": 3456,
+  "imageName": "124b8843-88cc-4cca-bb5c-375a7f69518e.png",
+  "createdAt": {
+    "$date": "2026-03-01T14:01:07.950Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:32:49.578Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a447070a402ec390f096bc"
+  },
+  "destination": "Iran",
+  "description": "Discover Iran’s rich history, magnificent mosques, and warm hospitality. From ancient Persian ruins to breathtaking mountain and desert landscapes, every city tells a timeless story.",
+  "startDate": {
+    "$date": "2027-01-02T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2027-07-23T00:00:00.000Z"
+  },
+  "price": 3456,
+  "imageName": "8b491eba-1325-44c1-bc2f-6eb8879f2a02.png",
+  "createdAt": {
+    "$date": "2026-03-01T14:02:47.712Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:36:35.995Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a9b9883c8773f668b582eb"
+  },
+  "destination": "Romania",
+  "description": "Amazing landscapes and castles. The mountain roads were unforgettable!\r\nBeautiful country with rich history. Bran Castle was the highlight.",
+  "startDate": {
+    "$date": "2026-03-17T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-21T00:00:00.000Z"
+  },
+  "price": 5690,
+  "imageName": "9971929b-3d02-45dc-b13e-443de124ddda.png",
+  "createdAt": {
+    "$date": "2026-03-05T17:12:40.747Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T13:23:10.254Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a9cb033c8773f668b58361"
+  },
+  "destination": "paris",
+  "description": "Explore Italy’s timeless beauty, from Rome’s ancient landmarks and Florence’s art treasures to Venice’s romantic canals and the stunning Amalfi Coast. A perfect blend of culture, cuisine, and charm.",
+  "startDate": {
+    "$date": "2026-03-18T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-21T00:00:00.000Z"
+  },
+  "price": 2345,
+  "imageName": "f9c38d52-f990-494c-8783-bc2ab0350fe9.png",
+  "createdAt": {
+    "$date": "2026-03-05T18:27:15.830Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T13:21:29.169Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a9f2346bec6c653b3d4b7a"
+  },
+  "destination": "New York",
+  "description": "Experience the energy, culture, and iconic skyline of New York City. Stroll through vibrant neighborhoods, admire world-famous landmarks, and feel the city that never sleeps. Visit legendary places li",
+  "startDate": {
+    "$date": "2026-03-18T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-25T00:00:00.000Z"
+  },
+  "price": 8940,
+  "imageName": "5e32d68f-e8f8-41bb-8964-c0659efcd108.png",
+  "createdAt": {
+    "$date": "2026-03-05T21:14:28.920Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T19:06:03.351Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a9f2ae6bec6c653b3d4b7e"
+  },
+  "destination": "Canada",
+  "description": "Experience the vast natural beauty, vibrant cities, and welcoming culture of Canada. Discover the cosmopolitan charm of Toronto, wander the historic streets of Quebec City, and explore breathtaking wi",
+  "startDate": {
+    "$date": "2026-03-18T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-25T00:00:00.000Z"
+  },
+  "price": 6780,
+  "imageName": "a786e9f6-a4d5-4b13-a7b3-92f5e5661fcd.png",
+  "createdAt": {
+    "$date": "2026-03-05T21:16:30.113Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T13:44:11.527Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a9f4716bec6c653b3d4b82"
+  },
+  "destination": "Greece",
+  "description": "Experience the timeless beauty, crystal-clear seas, and rich history of Greece. Wander through ancient ruins in Athens, relax on sun-soaked beaches across the islands, and enjoy delicious Mediterranea",
+  "startDate": {
+    "$date": "2026-03-22T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-29T00:00:00.000Z"
+  },
+  "price": 4500,
+  "imageName": "594e3348-f8e8-454f-9661-7dd155b6562b.png",
+  "createdAt": {
+    "$date": "2026-03-05T21:24:01.547Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T13:44:28.571Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b34fae510b12c00c8f3afd"
+  },
+  "destination": "Spain",
+  "description": "Spain is one of the most popular travel destinations in Europe. It offers a mix of historic cities, beautiful beaches, rich culture, amazing food, and vibrant nightlife. Whether you're interested in h",
+  "startDate": {
+    "$date": "2026-03-14T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-20T00:00:00.000Z"
+  },
+  "price": 5677,
+  "imageName": "2c3a4d7e-bf84-4321-ab48-a3083be27389.png",
+  "createdAt": {
+    "$date": "2026-03-12T23:43:42.193Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:43:42.193Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b34fe3510b12c00c8f3b01"
+  },
+  "destination": "Germany",
+  "description": "Germany is one of Europe’s most fascinating travel destinations. It combines historic cities, fairy-tale castles, beautiful countryside, modern culture, and world-famous food and beer. Visitors enjoy",
+  "startDate": {
+    "$date": "2026-03-19T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-31T00:00:00.000Z"
+  },
+  "price": 5781,
+  "imageName": "1f3ebd59-47d6-45e1-9fcd-22622f13cd72.png",
+  "createdAt": {
+    "$date": "2026-03-12T23:44:35.595Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T19:06:17.840Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b3509d510b12c00c8f3b09"
+  },
+  "destination": "Dubai",
+  "description": "Dubai is one of the most modern and luxurious travel destinations in the world. Located in the United Arab Emirates, Dubai is famous for its skyscrapers, luxury shopping, desert adventures, beaches, a",
+  "startDate": {
+    "$date": "2026-03-21T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-28T00:00:00.000Z"
+  },
+  "price": 4890,
+  "imageName": "3ce8d992-9197-46d5-9ff2-f045703803ce.png",
+  "createdAt": {
+    "$date": "2026-03-12T23:47:41.329Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T23:47:41.329Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b9654d8a41b970893c57b3"
+  },
+  "destination": "ISAREL",
+  "description": "Discover the timeless charm of Jerusalem, a city where ancient history and vibrant culture come together. Walk through the sacred streets of the Old City, explore world-renowned landmarks, and experie",
+  "startDate": {
+    "$date": "2026-03-19T00:00:00.000Z"
+  },
+  "endDate": {
+    "$date": "2026-03-26T00:00:00.000Z"
+  },
+  "price": 7800,
+  "imageName": "cc9eee23-3a0b-4703-b882-4f24c2d34c25.png",
+  "createdAt": {
+    "$date": "2026-03-17T14:29:33.308Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-17T14:46:47.604Z"
+  }
+}]
