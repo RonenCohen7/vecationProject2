@@ -6,10 +6,12 @@ import "./VacationList.css";
 import { userService } from "../../../Services/UserService";
 import { notify } from "../../../Utils/Notify";
 import { appConfig } from "../../../Utils/AppConfig";
+import { useTitle } from "../../../Utils/UseTitle";
 
 
 
 export function ListVacation() {
+    useTitle("Vacation")
 
     const imageBase = appConfig.imageUrl;
 
