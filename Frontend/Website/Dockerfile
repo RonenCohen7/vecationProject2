@@ -28,7 +28,7 @@ FROM nginx:alpine
 COPY --from=builder /app/Frontend/Website/dist /usr/share/nginx/html
 COPY ./Frontend/Website/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 5173
+EXPOSE 80
 
 # # How to run our app when container starts: 
 # ENTRYPOINT pnpm start
