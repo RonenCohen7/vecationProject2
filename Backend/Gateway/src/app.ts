@@ -15,7 +15,7 @@ class App {
             console.log("Connected Gateway");
             const loginLimiter = rateLimit({
                 windowMs: 15 * 60 * 1000,
-                max: 25,
+                max: 40,
                 message: "Too many login attempts. Try again later."
             });
             server.use("/api/auth/register", loginLimiter);
