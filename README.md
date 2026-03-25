@@ -1,42 +1,49 @@
-Vacation Project – Microservice
+Vacation Project – Microservices System
 Overview
 
-The Vacation Project Microservice is part of a full-stack vacation management system.
-This service is responsible for handling specific backend functionality in a microservices architecture, including data processing, API communication, and containerized deployment.
+The Vacation Project is a full-stack microservices-based web application for managing vacations, including creating, updating, viewing, and managing vacation data.
 
-The project is built with TypeScript, styled with CSS, and runs inside Docker containers for easy deployment and scalability.
+The system is built using a microservices architecture where each service is responsible for a specific domain and communicates via REST APIs.
 
+The project is containerized using Docker to ensure consistent development and deployment environments.
 Tech Stack
-TypeScript – Main programming language
-Node.js / Express – Backend server
-CSS – Basic styling
-Docker – Containerization and deployment
-REST API – Communication between services
-MySQL / MongoDB – Database (depending on service)
-Axios – API requests between microservices
-Features
-Microservice architecture
-RESTful API
-Dockerized environment
-Scalable service structure
-Communication between multiple services
-Data validation and error handling
-Environment-based configuration
-Modular and maintainable code structure
-Project Structure
-vacation-microservice/
+
+Backend
+  Node.js
+  Express
+  TypeScript
+  MySQL / MongoDB
+  REST API
+  
+Frontend
+  React
+  TypeScript
+  CSS
+  
+DevOps
+  Docker
+  Docker Compose
+  Environment Variables (.env)
+  Microservices Architecture
+
+The system is built using multiple microservices:
+  Vacation Service – Manage vacations (CRUD operations)
+  User Service – Authentication and user management
+  Follow Service – Users can follow vacations
+  Gateway / API Service – Central entry point for the system
+
+Each service runs in its own Docker container.
+vacationProject/
 │
-├── src/
-│   ├── controllers/
-│   ├── services/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   └── app.ts
+├── Backend/
+│   ├── vacation-service/
+│   ├── user-service/
+│   ├── follow-service/
 │
-├── docker/
+├── Frontend/
+│   ├── react-app/
+│
+├── docker-compose.yml
+├── docker-compose.production.yml
 ├── .env
-├── Dockerfile
-├── package.json
-├── tsconfig.json
 └── README.md
