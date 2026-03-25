@@ -2,9 +2,7 @@ Vacation Project – Microservices System
 Overview
 
 The Vacation Project is a full-stack microservices-based web application for managing vacations, including creating, updating, viewing, and managing vacation data.
-
 The system is built using a microservices architecture where each service is responsible for a specific domain and communicates via REST APIs.
-
 The project is containerized using Docker to ensure consistent development and deployment environments.
 Tech Stack
 
