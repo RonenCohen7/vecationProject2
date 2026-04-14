@@ -113,10 +113,12 @@ class VacationService {
 
     //Get Recommend from gpt 
     public async getRecommend(_id: string): Promise<string> {
-        const vacation = await this.getOneVacation(_id);
-        console.log("im on gpt get your id vacation");
-        
+        console.log("ENTER getRecommend", _id);
 
+        const vacation = await this.getOneVacation(_id);
+        console.log("FOUND VACATION:", vacation.destination);
+        console.log("im on gpt get your id vacation");
+    
         const systemContent = "You are a professional tour guide in the world who knows favorite places for vacationers You know how to combine cultural tourist routes with culinary routes ,You also know how to recommend adventure travel routes.Return recommendations in JSON format";
         const userContent = `
                 Give a short travel recommendation for tourists visiting ${vacation.destination}.
@@ -127,6 +129,7 @@ class VacationService {
                 Keep it under 120 words.
                 `;
         const recommend = await gpt.getCompletion(systemContent, userContent);
+        console.log("im sending the recommend");
         console.log("im sending the recommend");
         
         return recommend;

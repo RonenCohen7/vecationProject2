@@ -13,8 +13,8 @@ class AppConfig {
     public readonly vacationImages = process.env.NODE_ENV === "production" ? "/app/Backend/Vacation/uploads" : path.join(__dirname,"..","..","..","uploads")
    
     private readonly devHost = "http://localhost:4001";
-    private readonly prodHost = "http://18.175.121.197:4003";
-
+    // private readonly prodHost = "http://18.175.121.197:4003";
+    private readonly prodHost = "http://79.177.168.244:4003";
     private readonly host = process.env.NODE_ENV === "production"
         ?this.prodHost : this.devHost
     
